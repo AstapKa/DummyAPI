@@ -1,0 +1,3340 @@
+{
+	"info": {
+		"_postman_id": "c1ec8bb4-e01a-498d-8bfc-3b04acfd8c83",
+		"name": "DummyApi_DZ3,4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11044028"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Change page",
+					"item": [
+						{
+							"name": "PostList_page-4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[19].id\", function () {\r",
+											"pm.expect(jsonData.data[19].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[20]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(20);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(4);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});\r",
+											"\r",
+											"console.log(jsonData.data[0].id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?page=4",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "Limit",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "Created",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "4",
+											"description": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_page-null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[19].id\", function () {\r",
+											"pm.expect(jsonData.data[19].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[20]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(20);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});\r",
+											"\r",
+											"console.log(jsonData.data[0].id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "Limit",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "Created",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_page-0",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[19].id\", function () {\r",
+											"pm.expect(jsonData.data[19].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[20]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(20);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});\r",
+											"\r",
+											"console.log(jsonData.data[0].id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?page=0",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_page-lat",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[19].id\", function () {\r",
+											"pm.expect(jsonData.data[19].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[20]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(20);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(null);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});\r",
+											"\r",
+											"console.log(jsonData.data[0].id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?page=lat",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "lat"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_page-1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[19].id\", function () {\r",
+											"pm.expect(jsonData.data[19].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[20]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(20);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(1);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});\r",
+											"\r",
+											"console.log(jsonData.data[0].id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?page=1",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_page-1000",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(20);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(999);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?page=1000",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_page-999",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(20);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(999);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?page=999",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "999"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_page-998",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(20);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(998);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?page=998",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "998"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_page-0003",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[19].id\", function () {\r",
+											"pm.expect(jsonData.data[19].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[20]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(20);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(0003);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});\r",
+											"\r",
+											"console.log(jsonData.data[0].id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?page=0003",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0003"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_page-0.5",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[19].id\", function () {\r",
+											"pm.expect(jsonData.data[19].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[20]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(20);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});\r",
+											"\r",
+											"console.log(jsonData.data[0].id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?page=0.5",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0.5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Change limit",
+					"item": [
+						{
+							"name": "PostList_limit-4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[4].id\", function () {\r",
+											"pm.expect(jsonData.data[4].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[20]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(5);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?limit=4",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1000",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_limit-5",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[4].id\", function () {\r",
+											"pm.expect(jsonData.data[4].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[20]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(5);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?limit=5",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1000",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_limit-6",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[4].id\", function () {\r",
+											"pm.expect(jsonData.data[4].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[20]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(6);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1000",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_limit-26",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[4].id\", function () {\r",
+											"pm.expect(jsonData.data[4].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[27]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(26);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?limit=26",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1000",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "26"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_limit-50",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[4].id\", function () {\r",
+											"pm.expect(jsonData.data[4].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[51]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(50);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?limit=50",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1000",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "50"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_limit-51",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[4].id\", function () {\r",
+											"pm.expect(jsonData.data[4].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[51]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(50);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?limit=51",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1000",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "51"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_limit-null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"pm.expect(jsonData.data).to.be.an('array')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[0].id\", function () {\r",
+											"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body mail is undefined\", function () {\r",
+											"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body data[4].id\", function () {\r",
+											"pm.expect(jsonData.data[4].id).to.be.an('string')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check is undefined string\", function () {\r",
+											"pm.expect(jsonData.data[10001]).to.be.an('undefined')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check limit\", function () {\r",
+											"    pm.expect(jsonData.limit).to.eql(null);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check page\", function () {\r",
+											"    pm.expect(jsonData.page).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body total is number\", function () {\r",
+											"pm.expect(jsonData.total).to.be.a('number')\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post?limit=",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1000",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PostList_created",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Check body array\", function () {\r",
+									"pm.expect(jsonData.data).to.be.an('array')\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check body data[0].id\", function () {\r",
+									"pm.expect(jsonData.data[0].id).to.be.an('string')\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check body mail is undefined\", function () {\r",
+									"pm.expect(jsonData.data[0].mail).to.be.an('undefined')\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check body data[19].id\", function () {\r",
+									"pm.expect(jsonData.data[19].id).to.be.an('string')\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check is undefined string\", function () {\r",
+									"pm.expect(jsonData.data[22]).to.equal(undefined);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check limit\", function () {\r",
+									"    pm.expect(jsonData.limit).to.eql(20);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check page\", function () {\r",
+									"    pm.expect(jsonData.page).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check body total is number\", function () {\r",
+									"pm.expect(jsonData.total).to.be.a('number')\r",
+									"});\r",
+									"\r",
+									"console.log(jsonData.data[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/{{Api-v}}/post?created=1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"{{Api-v}}",
+								"post"
+							],
+							"query": [
+								{
+									"key": "created",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Change text",
+					"item": [
+						{
+							"name": "PostList_created-text=null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql(\"\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.be.a('string');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-text=6haracters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"console.log(jsonData)\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql(\"\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.be.a('string');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"КоРжИк\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"КоРжИк\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-text=15haracters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql(\"\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.be.a('string');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"LLLLLOOOOOKKKKK\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"LLLLLOOOOOKKKKK\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-text=49haracters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql(\"\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.be.a('string');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"llllloooookkkkkpppppgggggfffffssssslllllaaaaaffff\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"llllloooookkkkkpppppgggggfffffssssslllllaaaaaffff\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-text=50haracters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql(\"\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.be.a('string');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"llllloooookkkkkpppppgggggfffffssssslllllaaaaafffff\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"llllloooookkkkkpppppgggggfffffssssslllllaaaaafffff\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-text=51haracters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql(\"\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.be.a('string');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"llllloooookkkkkpppppgggggfffffssssslllllaaaaafffffy\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"llllloooookkkkkpppppgggggfffffssssslllllaaaaafffffy\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-text=SpecHaracters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql(\"\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.be.a('string');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"%:;№!№;%:?*()_+=\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"%:;№!№;%:?*()_+=\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Change image",
+					"item": [
+						{
+							"name": "PostList_created-image=null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql(\"\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"LLLLLOOOOOKKKKK\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"LLLLLOOOOOKKKKK\",\r\n            \"image\": \"\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-image",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql(\"\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('www.cat.com');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"LLLLLOOOOOKKKKK\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"LLLLLOOOOOKKKKK\",\r\n            \"image\": \"www.cat.com\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-image=кириллица",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql(\"\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('тексттест');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"LLLLLOOOOOKKKKK\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"LLLLLOOOOOKKKKK\",\r\n            \"image\": \"тексттест\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-image=любойТекст",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql(\"\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('TextTest');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"LLLLLOOOOOKKKKK\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"LLLLLOOOOOKKKKK\",\r\n            \"image\": \"TextTest\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Change likes",
+					"item": [
+						{
+							"name": "PostList_created-likes=null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(0);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql('');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('TextTest');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"LLLLLOOOOOKKKKK\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"LLLLLOOOOOKKKKK\",\r\n            \"image\": \"TextTest\",\r\n           \r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-likes=1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(1);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql('');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('TextTest');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"LLLLLOOOOOKKKKK\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"LLLLLOOOOOKKKKK\",\r\n            \"image\": \"TextTest\",\r\n            \"likes\": 1,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-likes=0",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(0);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql('');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('TextTest');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"LLLLLOOOOOKKKKK\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"LLLLLOOOOOKKKKK\",\r\n            \"image\": \"TextTest\",\r\n            \"likes\": 0,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-likes=negative",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(-4);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql('');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('TextTest');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"LLLLLOOOOOKKKKK\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"LLLLLOOOOOKKKKK\",\r\n            \"image\": \"TextTest\",\r\n            \"likes\": -4,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Change tags",
+					"item": [
+						{
+							"name": "PostList_created-tags=null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql('');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"ice caves in the wild landscape photo of ice near ...\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"    pm.expect(jsonData.tags).to.be.an ('array')\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"ice caves in the wild landscape photo of ice near ...\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n           \r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-tags=random",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql('');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.be.an('string');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"ice caves in the wild landscape photo of ice near ...\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"    pm.expect(jsonData.tags).to.be.an('array');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"ice caves in the wild landscape photo of ice near ...\",\r\n            \"image\": \"{{randomword}}\",\r\n            \"likes\": 31,\r\n           \"tags\": [\"{{randomwords}}\"],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-tags=кириллица",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql('');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"ice caves in the wild landscape photo of ice near ...\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"    pm.expect(jsonData.tags).to.eql([\"кириллица\"]);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"ice caves in the wild landscape photo of ice near ...\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n           \"tags\": [\"кириллица\"\r\n                \r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-tags=numder",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql('');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"ice caves in the wild landscape photo of ice near ...\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"    pm.expect(jsonData.tags).to.eql(['867544673']);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"ice caves in the wild landscape photo of ice near ...\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n           \"tags\": [\"867544673\"\r\n                \r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Change user_id",
+					"item": [
+						{
+							"name": "PostList_created-user_id=real",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Check likes\", function () {\r",
+											"    pm.expect(jsonData.likes).to.eql(31);\r",
+											"});\r",
+											"pm.test(\"Check link\", function () {\r",
+											"    pm.expect(jsonData.link).to.eql('');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check image\", function () {\r",
+											"    pm.expect(jsonData.image).to.eql('https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Date\", function () {\r",
+											"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check Text\", function () {\r",
+											"    pm.expect(jsonData.text).to.eql(\"ice caves in the wild landscape photo of ice near ...\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.test(\"Check body\", function () {\r",
+											"pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"post_id\"));\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check User_id\", function () {\r",
+											"    pm.expect(jsonData.owner.id).to.eql(pm.collectionVariables.get(\"user_id\"));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body array\", function () {\r",
+											"    pm.expect(jsonData.tags).to.eql([\"любой текст, который в кавычках переводится в тэг\"]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"ice caves in the wild landscape photo of ice near ...\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n           \"tags\": [\"любой текст, который в кавычках переводится в тэг\"\r\n                \r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostList_created-user_id=NotReal",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name is Bad Request\", function () {\r",
+											"    pm.response.to.have.status(\"Bad Request\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+											"\r",
+											"pm.test(\"Body null\", function () {\r",
+											"    pm.expect(jsonData.error).to.eql(\"BODY_NOT_VALID\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"text\": \"ice caves in the wild landscape photo of ice near ...\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n           \"tags\": [\"любой текст, который в кавычках переводится в тэг\"\r\n                \r\n            ],\r\n            \"owner\": \"kok0fe9f53u123k168a17a0b\"\r\n             \r\n            \r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"{{Api-v}}",
+										"post",
+										"create"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "1"
+										},
+										{
+											"key": "Limit",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PostList_created-Body_null",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name is Bad Request\", function () {\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+									"\r",
+									"pm.test(\"Body null\", function () {\r",
+									"    pm.expect(jsonData.error).to.eql(\"BODY_NOT_VALID\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/{{Api-v}}/post/create?page=1&limit=10",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"{{Api-v}}",
+								"post",
+								"create"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostList_created",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"post_id\", jsonData.id);\r",
+									"\r",
+									"pm.test(\"Check likes\", function () {\r",
+									"    pm.expect(jsonData.likes).to.eql(31);\r",
+									"});\r",
+									"pm.test(\"Check link\", function () {\r",
+									"    pm.expect(jsonData.link).to.eql('');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check image\", function () {\r",
+									"    pm.expect(jsonData.image).to.eql('https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check Date\", function () {\r",
+									"    pm.expect(jsonData.publishDate).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check Text\", function () {\r",
+									"    pm.expect(jsonData.text)\r",
+									"    .to.eql(\"ice caves in the wild landscape photo of ice near ...\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check Owner_id\", function () {\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.owner.id)\r",
+									"    .to.eql(\"60d0fe4f5311236168a10a0b\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"text\": \"ice caves in the wild landscape photo of ice near ...\",\r\n            \"image\": \"https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg\",\r\n            \"likes\": 31,\r\n            \"tags\": [\r\n                \"snow\",\r\n                \"ice\",\r\n                \"mountain\"\r\n            ],\r\n            \"owner\": \"60d0fe4f5311236168a10a0b\"\r\n             \r\n            \r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/{{Api-v}}/post/create?Page=1&Limit=6",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"{{Api-v}}",
+								"post",
+								"create"
+							],
+							"query": [
+								{
+									"key": "Page",
+									"value": "1"
+								},
+								{
+									"key": "Limit",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{app-id}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "app-id",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "post_id",
+			"value": ""
+		},
+		{
+			"key": "user_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
