@@ -86,13 +86,13 @@ ___
 ## Баг-репорты
 
 ## Коллекции POSTMAN
--https://github.com/AstapKa/DummyAPI/blob/main/GORest_users.collection.json 
-Эта коллекция проверяет получение, добавление, изменение, частичное изменение, удаление юзеров методами GET, POST, PUT, DELETE.
--https://github.com/AstapKa/DummyAPI/blob/main/GORest_comments.collection.json 
-Эта коллекция проверяет получение, добавление, изменение, удаление комментариев методами GET, POST, PUT, DELETE.
--https://github.com/AstapKa/DummyAPI/blob/main/DummyApi_postman_collection.json 
-Эта коллекция покрывает тестами раздел постов. Получение, добавление постов осуществляется методами GET, POST. Тест-кейсы разделены по методам GET и POST. Присутствуют как позитивные тест-кейсы, так и негативные. В этой коллекции в каждом кейсе присутствует автотест.
--https://github.com/AstapKa/DummyAPI/blob/main/Postman_environment.json
+* [Уровень списка 1. Пункт 1.](https://github.com/AstapKa/DummyAPI/blob/main/GORest_users.collection.json 
+Эта коллекция проверяет получение, добавление, изменение, частичное изменение, удаление юзеров методами GET, POST, PUT, DELETE.)
+* [Уровень списка 1. Пункт 2.](https://github.com/AstapKa/DummyAPI/blob/main/GORest_comments.collection.json 
+Эта коллекция проверяет получение, добавление, изменение, удаление комментариев методами GET, POST, PUT, DELETE.)
+* [Уровень списка 1. Пункт 3.](https://github.com/AstapKa/DummyAPI/blob/main/DummyApi_postman_collection.json 
+Эта коллекция покрывает тестами раздел постов. Получение, добавление постов осуществляется методами GET, POST. Тест-кейсы разделены по методам GET и POST. Присутствуют как позитивные тест-кейсы, так и негативные. В этой коллекции в каждом кейсе присутствует автотест.)
+* https://github.com/AstapKa/DummyAPI/blob/main/Postman_environment.json
 Здесь представлено окружение, необходимое для работы с тест-кейсами.
 
 
