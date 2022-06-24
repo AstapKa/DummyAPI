@@ -74,7 +74,7 @@ ___
 
 ## Майнд-карта
 Данные майнд-карты представляет собой набор тестов для тестирования объекта **POST**. Подробная проверка расписана для **GET List** и **Create POST**
-![Майнд-карта](https://drive.google.com/drive/folders/195EKk7y_6-1I25pvd-bN47urN4_KA5u8 "Майнд-карта")
+![Майнд-карта](https://drive.google.com/file/d/17Mrq-Kqr9EOt5U8ba8y-7GCZAqYN6kF7/view?usp=sharing "Майнд-карта")
 
 Также Майнд-карту можно [скачать](https://github.com/AstapKa/DummyAPI/blob/main/DummyApi.xmind)
 
