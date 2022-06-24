@@ -3,12 +3,12 @@
 ## Оглавление
 1. Описание проекта
     1. [POST](#POST)
-        1. [GET /post (Get List)](GET /post (Get List))
-        2. [POST /post/create (Create Post)](POST /post/create (Create Post))
-2. [Майнд-карта](Майнд-карта)
-3. [Тест-кейсы](Тест-кейсы)
-4. [Баг-репорты](Баг-репорты)
-5. [Коллекции POSTMAN](Коллекции POSTMAN)
+        1. [GET /post (Get List)](#GET /post (Get List))
+        2. [POST /post/create (Create Post)](#POST /post/create (Create Post))
+2. [Майнд-карта](#Майнд-карта)
+3. [Тест-кейсы](#Тест-кейсы)
+4. [Баг-репорты](#Баг-репорты)
+5. [Коллекции POSTMAN](#Коллекции POSTMAN)
 
 ## Описание проекта
 https://dummyapi.io/ Данный сайт представляет собой сервис для тестирования API 
