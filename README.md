@@ -2,7 +2,7 @@
 описание тестирование проекта DummyApi
 
 ## Оглавление
-1. Описание проекта
+1. [Описание проекта](#Описание-проекта)
     1. [POST](#POST)
         1. [GET /post (Get List)](#GET-/post)
         2. [POST /post/create (Create Post)](#POST-/post/create)
